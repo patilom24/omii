@@ -1,0 +1,86 @@
+slip 10:
+Q1->
+PHP CODE:- 
+<?php 
+function mod($x,$y) 
+{ 
+ $z=$x%$y; 
+echo "mod value of $x & $y is $z<br>"; 
+ } 
+function power($x, $y) 
+{ 
+ $f= 1; 
+ $n1 = $y; 
+ while($n1 > 0) 
+{ 
+ $f= $f * $x; 
+ $n1--; 
+ } 
+ echo "$x raised to the power $y = $f <br>"; 
+} 
+function sum($x) 
+{ 
+ $sum=0; 
+ $i=1; 
+ while($i<=$x) 
+ { 
+ $sum=$sum+$i; 
+ $i++; 
+ } 
+ echo "sumof first $x number is $sum<br>"; 
+} 
+function fact($y) 
+ { 
+ $i=1;$f=1; 
+ while($i<=$y) 
+ { 
+ 
+ $f=$f*$i; 
+ $i++; 
+ } 
+echo "factorial of $y is $f"; 
+ 
+ } 
+$x=$_POST['t1']; 
+$y=$_POST['t2']; 
+mod($x,$y); 
+ power($x,$y); 
+sum($x); 
+fact($y); 
+?> 
+HTML CODE :- 
+<html> 
+<body> 
+<form action="seta1.php" method=post> 
+Enter first number<input type=text name=t1><br> 
+Enter second number<input type=text name=t2> 
+<input type=submit value=display>
+</form>
+</body>
+</html>
+Q2->
+
+import pandas as pd
+
+url = "" path taka 
+names = ['sex', 'age', 'height', 'weight']
+df = pd.read_csv(url, names=names)
+
+print("Column-wise Mean:")
+print(df.mean())
+
+print("\nColumn-wise Median:")
+print(df.median())
+
+Q3->
+def get_manhattan_distance(p, q):
+    distance = 0
+    for p_i,q_i in zip(p,q):
+        distance += abs(p_i - q_i)
+    return distance
+a = (1, 1)
+b = (4, 3)
+# distance b/w a and b
+d = get_manhattan_distance(a, b)
+
+print(d)

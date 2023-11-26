@@ -1,0 +1,141 @@
+slip 12:
+Q1->
+HTML CODE :- 
+<html> 
+<body> 
+<form name="f1" action="setb1.php" method="POST"> 
+Enter the 1st number<input type="text" name="n1"> 
+<br>Enter 2nd number<input type"text name="n2"> 
+<br>Addition<input type=radio name=radio value="a"> 
+<br>Subtraction<input type=radio name=radio value="s"> 
+<br>Multiplication<input type=radio name=radio value="m"> 
+<br>Division<input type="radio" name="radio" value="d"> 
+<br><input type="submit" value="Answer"> 
+</form> 
+</body> 
+</html> 
+
+PHP FILE 1 CODE:- 
+<?php 
+function add($n1,$n2=10) 
+{ 
+ return($n1+$n2); 
+} 
+function sub($n2,$n1=3) 
+{ 
+ return($n1-$n2); 
+} 
+function mul($n1,$n2=5) 
+{ 
+ return($n1*$n2); 
+} 
+function div($n1,$n2=3) 
+{ 
+ return($n1/$n2); 
+} 
+?> 
+
+PHP FILE 2 CODE:- 
+<?php 
+include("setb12.php"); 
+$n1=$_POST['n1']; 
+$n2=$_POST['n2']; 
+$opt=$_POST['radio']; 
+if($opt=='a') 
+{ 
+ 
+ if($n1 && $n2) 
+ echo"Answer".add($n1,$n2); 
+ elseif($n1) 
+ echo"Answer".add($n1); 
+ elseif($n2) 
+ echo"answer".add($n2); 
+ 
+} 
+if($opt=='s') 
+{ 
+ if($n1 && $n2) 
+ echo"Answer".sub($n1,$n2); 
+ 
+ elseif($n1) 
+ echo"Answer".sub($n1); 
+ elseif($n2) 
+ echo"answer".sub($n2); 
+} 
+if($opt=='m') 
+{ 
+ if($n1 && $n2) 
+ echo"Answer".mul($n1,$n2); 
+ 
+ elseif($n1) 
+ echo"Answer".mul($n1); 
+ elseif($n2) 
+ echo"answer".mul($n2); 
+} 
+if($opt=='d') 
+{ 
+ if($n2==0) 
+ echo"Division by zero is not possible"; 
+ else 
+ { 
+ if($n1 && $n2) 
+ echo"Answer".div($n1,$n2); 
+ 
+ elseif($n1) 
+ echo"Answer".div($n1); 
+ elseif($n2) 
+ echo"answer".div($n2); 
+ } 
+} 
+?> 
+Q2->
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = np.random.randint(1, 101, 50)
+
+plt.plot(data)
+plt.title('Line Chart of Random Integers')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.show()
+
+plt.scatter(data, data)
+plt.title('Scatter Plot of Random Integers')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.show()
+
+plt.hist(data)
+plt.title('Histogram of Random Integers')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.show()
+
+plt.boxplot(data)
+plt.title('Box Plot of Random Integers')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.show()
+
+Q3->
+import pandas as pd
+import numpy as np
+
+# Create data frame
+data = {'Name': ['om', 'anurag', 'Charlie', 'pakya', 'vikas',
+                   'om', 'anurag', np.nan, 'pakya', 'vikas'],
+        'Salary': [70000, 80000, 90000, 100000, 110000,
+                    70000, 80000, 90000, 100000, 110000],
+        'Department': ['Marketing', 'Sales', 'IT', 'Marketing', 'HR',
+                        'Marketing', 'Sales', 'IT', 'Marketing', 'HR']}
+df = pd.DataFrame(data)
+
+# Drop duplicate values
+df = df.drop_duplicates()
+
+# Drop all null and empty values
+df = df.dropna()
+
+# Print the modified data frame
+print(df)

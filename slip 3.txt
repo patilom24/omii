@@ -1,0 +1,52 @@
+slip 3:
+Q1->
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile</title>
+    <style>
+        .company-name {
+            background-color: green;
+            color: red;
+            font-size: 24px;
+            padding: 10px;
+        }
+
+        .company-description {
+            color: blue;
+            font-size: 18px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="company-name">ABC Company</h1>
+    <p class="company-description">ABC Company is a leading technology company that specializes in developing innovative software solutions.</p>
+</body>
+</html>
+Q2->
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+url="iris.data.csv"->path taka 
+names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+dataset = pd.read_csv(url, names=names)
+for feature in dataset.columns[:-1]:
+    plt.figure(figsize=(10, 8))
+    sns.boxplot(x='class', y=feature, data=dataset)
+    plt.title(f"Box plot of {feature}")
+    plt.show()
+
+Q3->
+
+import pandas as pd
+import numpy as np
+url = "weight-height.csv"
+names = ['Height', 'Weight', 'Gender']
+dataset = pd.read_csv(url, names=names)
+print(dataset.describe())
+

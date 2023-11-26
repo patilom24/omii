@@ -1,0 +1,52 @@
+slip 19:
+Q1->
+<?php
+$str1 = "om";
+$str2 = "patil";
+$num_chars = 3;
+
+echo "String 1: $str1\n";
+echo "String 2: $str2\n";
+echo "Position: $pos\n";
+echo "Number of Characters to Remove: $num_chars\n";
+
+// a. Delete a small part from first string
+$str1 = substr_replace($str1, '', $pos, $num_chars);
+echo "Modified String 1: $str1\n";
+
+// b. Insert the given small string in the given big string at specified position
+$pos = 2;
+$str1 = substr_replace($str1, $str2, $pos, 0);
+echo "String 1 after insertion: $str1\n";
+
+// c. Replace some characters/ words from given big string with the given small string at specified position
+$pos = 5;
+$len = strlen($str2);
+$str1 = substr_replace($str1, $str2, $pos, $len);
+echo "String 1 after replacement: $str1\n";
+
+Q2->
+import pandas as pd
+df = pd.DataFrame(columns=['name', 'age', 'salary', 'department'])
+for i in range(10):
+    df.loc[i] = ['Name' + str(i+1), i+20, i+5000, 'Department' + str(i+1)]
+print(df)
+
+Q3->
+import pandas as pd
+df = pd.read_csv('stud.dat', sep=' ')
+print(df.head())
+print('Shape:', df.shape)
+print('Data Types:', df.dtypes)
+print('Feature Names:', df.columns)
+print('Description:', df.describe())
+
+Q4->
+import pandas as pd
+import numpy as np
+df = pd.DataFrame()
+df = pd.DataFrame(columns=['name', 'age', 'salary', 'department'])
+for i in range(10):
+    df.loc[i] = ['Name' + str(i+1), i+20, i+5000, 'Department' + str(i+1)]
+df['remarks'] = pd.Series(['' for _ in range(10)])
+print(df)

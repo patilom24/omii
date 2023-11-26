@@ -1,0 +1,60 @@
+slip 11:
+Q1->
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Bootstrap Button Styles</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-secondary">Secondary</button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-primary">Primary</button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-success">Success</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-danger">Danger</button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-warning">Warning</button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-info">Info</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+Q2->
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+url = "iris.data.csv"
+names = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+df = pd.read_csv(url, names=names)
+plt.figure(figsize=(10, 7))
+df['species'].value_counts().plot(kind='pie', autopct='%1.1f%%')
+plt.title('Frequency of the Three pecies of the Iris Data')
+plt.show()
+
+Q3->
+import pandas as pd
+
+df = pd.read_csv('winequality-red.csv')
+print(df.describe())

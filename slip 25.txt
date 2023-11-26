@@ -1,0 +1,105 @@
+slip 25:
+Q1->
+
+<?php
+
+function displayFileType($filename)
+{
+    $fileType = pathinfo($filename, PATHINFO_EXTENSION);
+    echo "The file type is: " . $fileType . "\n";
+}
+
+function displayLastModificationTime($filename)
+{
+    $lastModificationTime = filemtime($filename);
+    echo "The last modification time of the file is: " . date('F d Y H:i:s', $lastModificationTime) . "\n";
+}
+
+function displayFileSize($filename)
+{
+    $fileSize = filesize($filename);
+    echo "The size of the file is: " . $fileSize . " bytes\n";
+}
+
+function deleteFile($filename)
+{
+    if (unlink($filename)) {
+        echo "The file has been deleted successfully.\n";
+    } else {
+        echo "Error deleting the file.\n";
+    }
+}
+
+$filename = readline("Enter the filename: ");
+
+while (true) {
+    echo "\n1) Display type of file\n";
+    echo "2) Display last modification time of file\n";
+    echo "3) Display the size of file\n";
+    echo "4) Delete the file\n";
+    echo "5) Exit\n";
+
+    $choice = readline("Enter your choice: ");
+
+    switch ($choice) {
+        case 1:
+            displayFileType($filename);
+            break;
+        case 2:
+            displayLastModificationTime($filename);
+            break;
+        case 3:
+            displayFileSize($filename);
+            break;
+        case 4:
+            deleteFile($filename);
+            break;
+        case 5:
+            exit;
+        default:
+            echo "Invalid choice. Please try again.\n";
+    }
+}
+?>
+
+Q2->
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+np.random.seed(0)
+data = np.random.randint(0, 100, 50)
+plt.figure(figsize=(10, 5))
+plt.plot(data, color='blue')
+plt.title('Line Chart')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.show()
+
+plt.figure(figsize=(10, 5))
+plt.scatter(data, color='red')
+plt.title('Scatter Plot')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.show()
+
+plt.figure(figsize=(10, 5))
+plt.hist(data, bins=10, color='green')
+plt.title('Histogram')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.show()
+
+plt.figure(figsize=(10, 5))
+sns.boxplot(data, color='orange')
+plt.title('Box Plot')
+plt.show()
+
+Q3->
+
+import matplotlib.pyplot as plt
+subjects = ['Mathematics', 'Physics', 'Chemistry', 'Biology']
+marks = [90, 85, 80, 75]
+plt.pie(marks, labels=subjects,autopct='%1.1f%%')
+plt.title('Marks obtained in different subjects')
+plt.show()

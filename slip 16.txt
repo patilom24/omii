@@ -1,0 +1,76 @@
+slip 16:
+Q1->
+HTML CODE :- 
+<html> 
+<body> 
+<form name="f1" method="POST" action="arrayc1.php"> 
+<center>MENU</center> 
+1.Insert an element in stack<br> 
+2.Delete element from stack<br> 
+3.Display the containts of stack<br> 
+ Enter your choice : 
+<input type="text" name="t1"><br> 
+<input type="submit" name="b1"> 
+</form> 
+</body> 
+</html> 
+
+PHP CODE :- 
+<?php 
+ $ch=$_POST['t1']; 
+ $a=array(10,20,1,2,3,4,5,6); 
+ switch($ch) 
+ { 
+ case 1:echo"<br>ORIGINAL STACK IS :"; 
+ foreach($a as $v) 
+ { 
+ echo"$v\t"; 
+ } 
+ array_push($a,'7','66'); 
+ echo"<br>After inserting an element stack is :"; 
+ foreach($a as $v) 
+ { 
+ echo"$v\t"; 
+ } 
+ break; 
+ case 2:echo"<br>ORIGINAL STACK IS :"; 
+ foreach($a as $v) 
+ { 
+ echo"$v\t"; 
+ } 
+ $e=array_pop($a); 
+ echo"<br>After deleting an element stack is :"; 
+ foreach($a as $v) 
+ { 
+ echo"$v\t"; 
+ } 
+ break; 
+ case 3:echo"<br>ORIGINAL STACK IS :"; 
+ foreach($a as $v) 
+ { 
+ echo"$v\t"; 
+ } 
+ break; 
+ 
+ default :echo"Invalid choice"; 
+ } 
+ } 
+?> 
+Q2->
+import pandas as pd
+import matplotlib.pyplot as plt
+subjects = ['Math', 'Science', 'English', 'History', 'Geography']
+marks = [85, 90, 75, 60, 50]
+plt.pie(marks, labels=subjects)
+plt.title("Marks Obtained in Different Subjects")
+plt.show()
+
+Q3->
+import pandas as pd
+students = pd.DataFrame({
+    "Name": ["John", "Mary", "Bob", "Alice", "Tom"],
+    "Graduation Percentage": [85, 90, 75, 60, 50],
+    "Age": [20, 21, 19, 18, 22]
+})
+print("Average age of students:", students["Age"].mean())
+print("Average of graduation percentage:", students["Graduation Percentage"].mean())

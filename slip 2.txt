@@ -1,0 +1,55 @@
+slip 2:
+Q1->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City of Dreams</title>
+</head>
+
+<body style="background-color: pink;">
+    <h1 style="color: blue; font-size: 48px; text-align: center;">City of Dreams</h1>
+    <div style="color: green; font-size: 24px; text-align: center;">Empire State Building</div>
+    <div style="color: orange; font-size: 24px; text-align: center;">Statue of Liberty</div>
+    <div style="color: purple; font-size: 24px; text-align: center;">Central Park</div>
+    <div style="color: red; font-size: 24px; text-align: center;">Times Square</div>
+    <img src="https://example.com/city-image.jpg" alt="City of Dreams" style="display: block; margin: 0 auto;">
+</body>
+
+</html>
+
+Q2->
+import pandas as pd
+import numpy as np
+df = pd.read_csv('Data.csv')
+df['salary'].fillna(df['salary'].mean(), inplace=True)
+df['age'].fillna(df['age'].mean(), inplace=True)
+df.to_csv('UpdatedData.csv', index=False)
+
+Q3->
+
+import pandas as pd
+import matplotlib.pyplot as plt
+data = {'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
+        'Salary': [50000, 55000, 60000, 65000, 70000]}
+df = pd.DataFrame(data)
+plt.figure(figsize=(10, 5))
+plt.plot(df['Name'], df['Salary'])
+
+plt.xlabel('Name')
+plt.ylabel('Salary')
+plt.title('Name Vs Salary')
+
+plt.show()
+
+Q4->
+
+import pandas as pd
+import numpy as np
+df = pd.read_csv('weight-height.csv')->link taka
+print(df.head(10))
+print(df.tail(10))
+print(df.sample(20))
+print(df.shape)

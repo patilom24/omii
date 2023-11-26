@@ -1,0 +1,65 @@
+slip 1:
+Q1->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1 {
+            font-size: 6pt;
+            color: red;
+        }
+
+        body {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Project Management</h1>
+    <contaier border="black">
+    <form>
+        <label for="project-name">Project Name:</label><br>
+        <input type="text" id="project-name" name="project-name"><br>
+        <label for="start-date">Start Date:</label><br>
+        <input type="date" id="start-date" name="start-date"><br>
+        <label for="end-date">End Date:</label><br>
+        <input type="date" id="end-date" name="end-date"><br>
+        <label for="priority">Priority:</label><br>
+        <label type="priority" id="end-date" name="priority">
+        <input type=radio name=a1 value="os">Low
+        <input type=radio name=a2 value="os">medium
+        <input type=radio name=a3 value="os">high
+        </select><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </form>
+    </contaier>
+</body>
+
+</html>
+
+Q2->
+
+import pandas as pd
+import matplotlib.pyplot as plt
+url = "root/folder name/iris.csv"-> itha te path taka 
+names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+dataset = pd.read_csv(url, names=names)
+plt.figure(figsize=(10, 7))
+dataset['class'].value_counts().plot(kind='pie', autopct='%1.1f%%')
+plt.title('Frequency of the three species of the Iris data')
+plt.show()
+
+Q3->
+import pandas as pd
+url = "root/folder name/winequality-red.csv"-> itha pn path dya 
+names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+dataset = pd.read_csv(url, names=names)
+print(dataset.describe())

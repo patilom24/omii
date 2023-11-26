@@ -1,0 +1,54 @@
+slip 24:
+Q1->
+
+<?php
+function readFileContent($file)
+{
+    $content = '';
+    if (file_exists($file)) {
+        $content = file_get_contents($file);
+    } else {
+        echo "File does not exist.";
+    }
+    return $content;
+}
+function writeFileContent($file, $content)
+{
+    if (file_exists($file)) {
+        file_put_contents($file, $content, FILE_APPEND);
+    } else {
+        echo "File does not exist.";
+    }
+}
+echo "Enter the name of the source file: ";
+$sourceFile = trim(fgets(STDIN));
+echo "Enter the name of the destination file: ";
+$destinationFile = trim(fgets(STDIN));
+$sourceContent = readFileContent($sourceFile);
+writeFileContent($destinationFile, $sourceContent);
+echo "Content appended successfully!";
+?>
+
+Q2->
+
+import pandas as pd
+import matplotlib.pyplot as plt
+url = "iris.data.csv"
+names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
+dataset = pd.read_csv(url, names=names)
+dataset['class'].value_counts().plot(kind='bar')
+plt.title('Frequency of the Three Species of the Iris Data')
+plt.xlabel('Species')
+plt.ylabel('Frequency')
+plt.show()
+
+Q3->
+import numpy as np 
+import matplotlib.pyplot as plt
+from sklearn import datasets
+iris = datasets.load_iris()
+plt.hist(iris.target, bins=np.arange(0,5)-0.5, edgecolor='black')
+plt.xlabel('Species')
+plt.ylabel('Frequency')
+plt.title('Frequency of the Three Species of the Iris Data')
+plt.show()

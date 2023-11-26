@@ -1,0 +1,49 @@
+slip 29:
+Q1->
+HTML CODE :- 
+<html> 
+<body> 
+<form action="event.php" method=POST> 
+Enter the name of event<input type=text name="txt1"> 
+<input type=submit value=ok> 
+</form> 
+</body></html> 
+PHP CODE :- 
+<?php 
+$conn=pg_connect("host=localhost port=5433 dbname=ty22 user=postgres password=123456"); 
+if(!$conn) 
+{ 
+echo("An error.....in connection"); 
+} 
+else 
+{ 
+echo("connection succesfull"); 
+echo "<br>"; 
+ 
+$ename1=$_POST['txt1']; 
+$s1="update event,committee,ec set status='working' 
+ where event.eno=ec.fk_eno and 
+ committee.cno=ec.fk_cno and etitle='$ename1'"; 
+ $result = pg_query($conn,$s1); 
+ if (!$result) 
+ { 
+ echo"ERROR....."; 
+ 
+ } 
+ else 
+ { 
+ echo "record updated"; 
+ } 
+ } 
+?> 
+
+Q2->
+import pandas as pd
+from sklearn.preprocessing import OneHotEncoder
+df = pd.read_csv('Data.csv')
+one_hot_encoder = OneHotEncoder(sparse_output=False)
+encoded_countries = one_hot_encoder.fit_transform(df[['Country']])
+encoded_df = pd.DataFrame(encoded_countries, columns=one_hot_encoder.get_feature_names_out(['Country']))
+df = pd.concat([df.drop('Country', axis=1), encoded_df], axis=1)
+print(df)
+df.to_csv('data_one_hot_encoded.csv', index=False)

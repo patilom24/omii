@@ -1,0 +1,104 @@
+slip 5:
+Q1->
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>My First Bootstrap Page</h1>
+        <p>Resize this responsive page to see the effect!</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Personal Information</h3>
+                <p>Add your personal information..</p>
+                <p>...</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Educational Information</h3>
+                <p>Add your educational information....</p>
+                <p>...</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Job Profile</h3>
+                <p>Add your job profile information.....</p>
+                <p>...</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+Q2->
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+np.random.seed(0)
+data = np.random.randint(0, 100, 50)
+
+plt.figure(figsize=(10, 5))
+plt.plot(data, color='blue', linestyle='-', marker='o', markersize=5, markerfacecolor='red')
+plt.title('Line Chart')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.grid(True)
+plt.show()
+
+plt.figure(figsize=(10, 5))
+plt.scatter(data, color='blue', marker='o', s=50, alpha=0.5)
+plt.title('Scatter Plot')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.grid(True)
+plt.show()
+
+plt.figure(figsize=(10, 5))
+plt.hist(data, bins=10, color='blue', edgecolor='black')
+plt.title('Histogram')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.grid(True)
+plt.show()
+
+plt.figure(figsize=(10, 5))
+plt.boxplot(data, vert=True, whis=1.5, patch_artist=True,
+            boxprops=dict(facecolor='blue', color='black'),
+            capprops=dict(color='black'),
+            whiskerprops=dict(color='black'),
+            flierprops=dict(color='red', marker='o'),
+            medianprops=dict(color='black'))
+plt.title('Box Plot')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.grid(True)
+plt.show()
+
+Q3->
+
+import pandas as pd
+data = pd.read_csv('Data.csv')
+shape = data.shape
+num_rows = shape[0]
+num_cols = shape[1]
+data_types = data.dtypes
+feature_names = data.columns
+description = data.describe()
+print("Shape of the data: ", shape)
+print("Number of rows: ", num_rows)
+print("Number of columns: ", num_cols)
+print("Data types of the columns: ", data_types)
+print("Feature names: ", feature_names)
+print("Description of the data: ", description) 
+
+ 

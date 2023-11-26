@@ -1,0 +1,57 @@
+slip 8:
+Q1->
+PHP CODE:- 
+<?php 
+$s1=$_POST['str1']; 
+$s2=$_POST['str2']; 
+if(strpos($s2,$s1)) 
+{ 
+ echo "$s1 is present at begining at $s2<br>"; 
+} 
+else 
+{ 
+ echo "$s1 is no present at the begining of $s2<br>"; 
+ } 
+$z=strpos($s2,$s1); 
+echo "position of $1 in $s2 is $z<br>"; 
+$z=strncmp($s1,$s2,3); 
+if($z==0) 
+{ 
+ echo "both string matches 3 char"; 
+} 
+else 
+ { 
+ echo "sring not match"; 
+ } 
+?> 
+HTML CODE :- 
+<html> 
+<body> 
+<form action="setb1.php" method=post> 
+Enter first string :<input type='text' name='str1'><br> 
+Enter second string :<input type='text' name='str2'><br> 
+<input type=submit value=ok> 
+</form> 
+</body> 
+
+Q2->
+
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+
+data = pd.read_csv('winequality-red.csv', sep=';')
+features = data.columns[:-1]
+target = data.columns[-1]
+X = data[features]
+y = data[target]
+scaler = StandardScaler()
+scaler.fit(X)
+
+X_scaled = scaler.transform(X)
+X_scaled_df = pd.DataFrame(X_scaled, columns=features)
+data_scaled = pd.concat([X_scaled_df, y], axis=1)
+print("Shape of the scaled data: ", data_scaled.shape)
+print("First 5 rows of the scaled data: ")
+print(data_scaled.head())
+
+

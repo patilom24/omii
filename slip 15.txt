@@ -1,0 +1,96 @@
+slip 15:
+Q1->
+HTML CODE:- 
+<html> 
+<body> 
+<form action=seta2_1.php method="POST"> 
+Enter string<input type=text name=txt1><br> 
+Enter your choice<br>&nbsp&nbsp 
+select first 5 words of string<input type="radio" name="op" value="five"> <br> 
+convertcase<input type="radio" name="op" value="convert"><br> 
+pad the string<input type="radio" name="op" value="pad"><br> 
+Remove leading white spaces<input type="radio" name="op" value="sp"><br> 
+reverse th string<input type="radio" name="op" value="rev"><br> 
+<input type=submit value="check"> 
+</form> 
+</body> 
+</html> 
+PHP CODE :- 
+<?php 
+ include("seta2_2.php"); 
+$x=$_POST['txt1']; 
+$y=$_POST['op']; 
+if($y=="five") 
+{ 
+ echo implode(' ', array_slice(explode(' ', $x), 0, 5)); 
+ 
+} 
+else 
+ if($y=="convert") 
+ { 
+ 
+ 
+ echo "lowercase of string".strtolower($x)."<br>"; 
+ echo "upper case of string is".strtoupper($x)."<br>"; 
+ } 
+else 
+ if($y=="pad") 
+ { 
+ 
+ $p=str_pad($x,15,"*",STR_PAD_BOTH); 
+ echo "padded string is".$p."<br>"; 
+ } 
+else 
+ if($y=="sp") 
+ { 
+ 
+ echo "after removing white spaces from begining".ltrim($x); 
+ } 
+else 
+ if($y=="rev") 
+ { 
+ 
+ echo "after reverse the string".strrev($x); 
+ } 
+ 
+else 
+ echo"invalid choice"; 
+?> 
+Q2->
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = np.random.randint(1, 101, 50)
+
+plt.plot(data)
+plt.title('Line Chart of Random Integers')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.show()
+
+plt.scatter(data, data)
+plt.title('Scatter Plot of Random Integers')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.show()
+
+plt.hist(data)
+plt.title('Histogram of Random Integers')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.show()
+
+plt.boxplot(data)
+plt.title('Box Plot of Random Integers')
+plt.xlabel('Index')
+plt.ylabel('Value')
+plt.show()
+
+Q3->
+import pandas as pd
+import matplotlib.pyplot as plt
+subjects = ['Math', 'Science', 'English', 'History', 'Geography']
+marks = [85, 90, 75, 60, 50]
+plt.pie(marks, labels=subjects)
+plt.title("Marks Obtained in Different Subjects")
+plt.show()
